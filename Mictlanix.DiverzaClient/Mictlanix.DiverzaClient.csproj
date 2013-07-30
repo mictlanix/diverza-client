@@ -71,7 +71,7 @@
     <None Include="Schemas\request.xsd" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CFDLib\Mictlanix.CFDLib.csproj">
+    <ProjectReference Include="..\..\CFDLib\Mictlanix.CFDLib.csproj">
       <Project>{63EBACD8-7BB0-480F-81BF-5E0690B27112}</Project>
       <Name>Mictlanix.CFDLib</Name>
     </ProjectReference>
