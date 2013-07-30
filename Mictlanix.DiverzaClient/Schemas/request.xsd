@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="Envelope" targetNamespace="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mstns="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified" xmlns:app1="http://www.buzonfiscal.com/ns/xsd/bf/TimbradoCFD" xmlns:app2="http://www.buzonfiscal.com/ns/xsd/bf/RequestTimbraCFDI" xmlns:app3="http://www.buzonfiscal.com/ns/xsd/bf/TimbradoCFD" xmlns:app4="http://www.buzonfiscal.com/ns/xsd/bf/TimbradoCFD" xmlns:app5="http://www.buzonfiscal.com/ns/xsd/bf/RequestTimbraCFDI" xmlns:app6="http://www.buzonfiscal.com/ns/xsd/bf/TimbradoCFD" xmlns:app7="http://www.buzonfiscal.com/ns/xsd/bf/RequestTimbraCFDI">
+  <!--ATTENTION: This schema contains references to other imported schemas-->
+  <xs:import namespace="http://www.buzonfiscal.com/ns/xsd/bf/TimbradoCFD" schemaLocation="TimbradoCFD.xsd" />
+  <xs:import namespace="http://www.buzonfiscal.com/ns/xsd/bf/RequestTimbraCFDI" schemaLocation="RequestTimbraCFDI.xsd" />
+  <xs:element name="Envelope" msdata:IsDataSet="true" msdata:Locale="en-US">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Body">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
