@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mictlanix.DiverzaClient
+namespace Mictlanix.Diverza.Client
 {
 	[Serializable]
 	public class DiverzaClientException : Exception

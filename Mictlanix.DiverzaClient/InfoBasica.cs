@@ -2,12 +2,12 @@ using System;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace Mictlanix.DiverzaClient
+namespace Mictlanix.Diverza.Client
 {
 	[Serializable]
 	[XmlType(Namespace="http://www.buzonfiscal.com/ns/xsd/bf/RequestTimbraCFDI")]
 	[XmlRoot("InfoBasica", Namespace="http://www.buzonfiscal.com/ns/xsd/bf/RequestTimbraCFDI")]
-	public partial class InfoBasica
+	internal partial class InfoBasica
 	{
 		private string rfcEmisorField;
 		private string rfcReceptorField;

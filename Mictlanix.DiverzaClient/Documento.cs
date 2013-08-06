@@ -2,11 +2,11 @@ using System;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace Mictlanix.DiverzaClient
+namespace Mictlanix.Diverza.Client
 {
 	[Serializable]
 	[XmlType(Namespace="http://www.buzonfiscal.com/ns/xsd/bf/RequestTimbraCFDI")]
-	public partial class Documento
+	internal partial class Documento
 	{
 		private byte[] archivoField;
 		private string nombreArchivoField;

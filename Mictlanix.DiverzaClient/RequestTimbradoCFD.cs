@@ -2,12 +2,12 @@ using System;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace Mictlanix.DiverzaClient
+namespace Mictlanix.Diverza.Client
 {
 	[Serializable]
 	[XmlType(Namespace="http://www.buzonfiscal.com/ns/xsd/bf/TimbradoCFD")]
 	[XmlRoot("RequestTimbradoCFD", Namespace="http://www.buzonfiscal.com/ns/xsd/bf/TimbradoCFD", IsNullable=false)]
-	public partial class RequestTimbradoCFD
+	internal partial class RequestTimbradoCFD
 	{
 		private string refIDField;
 		private Documento documentoField;

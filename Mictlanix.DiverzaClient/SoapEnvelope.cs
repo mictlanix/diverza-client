@@ -7,12 +7,12 @@ using System.Xml.Serialization;
 using System.Web.Services.Protocols;
 using Mictlanix.CFDv32;
 
-namespace Mictlanix.DiverzaClient
+namespace Mictlanix.Diverza.Client
 {
 	[Serializable]
 	[XmlType(Namespace="http://schemas.xmlsoap.org/soap/envelope/")]
 	[XmlRoot("Envelope", Namespace="http://schemas.xmlsoap.org/soap/envelope/", IsNullable=false)]
-	public partial class SoapEnvelope
+	internal partial class SoapEnvelope
 	{
 		private object[] bodyField;
 		
@@ -69,14 +69,14 @@ namespace Mictlanix.DiverzaClient
 			}
 		}
 		
-		public static SoapEnvelope FromXml(string xml)
+		public static SoapEnvelope FromXml (string xml)
 		{
 			using(var ms = new MemoryStream (Encoding.UTF8.GetBytes(xml))) {
 				return FromXml (ms);
 			}
 		}
 
-		public static SoapEnvelope FromXml(Stream xml)
+		public static SoapEnvelope FromXml (Stream xml)
 		{
 			var xs = new XmlSerializer (typeof(SoapEnvelope));
 			object obj = xs.Deserialize(xml);

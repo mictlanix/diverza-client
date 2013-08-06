@@ -9,7 +9,7 @@ using System.Text;
 using System.Xml;
 using Mictlanix.CFDv32;
 
-namespace Mictlanix.DiverzaClient
+namespace Mictlanix.Diverza.Client
 {
 	public class DiverzaClient
 	{

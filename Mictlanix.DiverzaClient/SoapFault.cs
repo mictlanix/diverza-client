@@ -8,12 +8,12 @@ using System.Xml.Serialization;
 using System.Web.Services.Protocols;
 using Mictlanix.CFDv32;
 
-namespace Mictlanix.DiverzaClient
+namespace Mictlanix.Diverza.Client
 {
 	[Serializable]
 	[XmlType(Namespace="http://schemas.xmlsoap.org/soap/envelope/")]
 	[XmlRoot("Fault", Namespace="http://schemas.xmlsoap.org/soap/envelope/", IsNullable=false)]
-	public partial class SoapFault
+	internal partial class SoapFault
 	{
 		string code;
 		string fault_string;
