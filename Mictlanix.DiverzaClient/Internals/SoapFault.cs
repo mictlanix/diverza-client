@@ -1,5 +1,5 @@
-﻿//
-// DiverzaClientException.cs
+//
+// SoapFault.cs
 //
 // Author:
 //       Eddy Zavaleta <eddy@mictlanix.com>
@@ -24,25 +24,42 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
+using System.IO;
+using System.Runtime.Serialization.Formatters;
+using System.Text;
+using System.Xml;
+using System.Xml.Schema;
+using System.Xml.Serialization;
+using Mictlanix.CFDv32;
 
-namespace Mictlanix.Diverza.Client
+namespace Mictlanix.Diverza.Client.Internals
 {
 	[Serializable]
-	public class DiverzaClientException : Exception
-    {
-		public DiverzaClientException ()
-        {
-        }
+	[XmlType(Namespace="http://schemas.xmlsoap.org/soap/envelope/")]
+	[XmlRoot("Fault", Namespace="http://schemas.xmlsoap.org/soap/envelope/", IsNullable=false)]
+	public partial class SoapFault
+	{
+		string code;
+		string fault_string;
+		object detail;
 
-		public DiverzaClientException (string message) : base (message)
-        {
-        }
+		[XmlElement("faultcode", Form = XmlSchemaForm.Unqualified)]
+		public string FaultCode {
+			get { return code; }
+			set { code = value; }
+		}
 
-		public DiverzaClientException (string code, string message) : base (message)
-		{
-			Code = code;
-        }
+		[XmlElement("faultstring", Form = XmlSchemaForm.Unqualified)]
+		public string FaultString {
+			get { return fault_string; }
+			set { fault_string = value; }
+		}
 
-		public string Code { get; private set; }
-    }
+		[XmlElement("detail", Form = XmlSchemaForm.Unqualified)]
+		public object Detail {
+			get { return detail; }
+			set { detail = value; }
+		}
+	}
 }
+

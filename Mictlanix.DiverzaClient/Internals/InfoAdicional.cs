@@ -1,5 +1,5 @@
-﻿//
-// DiverzaClientException.cs
+//
+// InfoAdicional.cs
 //
 // Author:
 //       Eddy Zavaleta <eddy@mictlanix.com>
@@ -24,25 +24,54 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
+using System.Xml;
+using System.Xml.Serialization;
 
-namespace Mictlanix.Diverza.Client
+namespace Mictlanix.Diverza.Client.Internals
 {
 	[Serializable]
-	public class DiverzaClientException : Exception
-    {
-		public DiverzaClientException ()
-        {
-        }
+	[XmlType(Namespace="http://www.buzonfiscal.com/ns/xsd/bf/RequestTimbraCFDI")]
+	[XmlRoot("InfoAdicional", Namespace="http://www.buzonfiscal.com/ns/xsd/bf/RequestTimbraCFDI")]
+	public partial class InfoAdicional
+	{
+		private string atributoField;
+		private string valorField;
 
-		public DiverzaClientException (string message) : base (message)
-        {
-        }
+		[XmlAttribute(Namespace="")]
+		public string Atributo {
+			get {
+				return this.atributoField;
+			}
+			set {
+				this.atributoField = value;
+			}
+		}
 
-		public DiverzaClientException (string code, string message) : base (message)
-		{
-			Code = code;
-        }
+		[XmlAttribute(Namespace="")]
+		public string Valor {
+			get {
+				return this.valorField;
+			}
+			set {
+				this.valorField = value;
+			}
+		}
 
-		public string Code { get; private set; }
-    }
+		XmlSerializerNamespaces xmlns;
+
+		[XmlNamespaceDeclarations]
+		public XmlSerializerNamespaces Xmlns {
+			get {
+				if (xmlns == null) {
+					xmlns = new XmlSerializerNamespaces (new XmlQualifiedName[] {
+						new XmlQualifiedName("r", "http://www.buzonfiscal.com/ns/xsd/bf/RequestTimbraCFDI")
+					});
+				}
+				
+				return xmlns;
+			}
+			set { xmlns = value; }
+		}
+	}
 }
+

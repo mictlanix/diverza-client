@@ -1,5 +1,5 @@
-﻿//
-// DiverzaClientException.cs
+//
+// DocumentoTipo.cs
 //
 // Author:
 //       Eddy Zavaleta <eddy@mictlanix.com>
@@ -24,25 +24,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
+using System.Xml;
+using System.Xml.Serialization;
 
-namespace Mictlanix.Diverza.Client
+namespace Mictlanix.Diverza.Client.Internals
 {
 	[Serializable]
-	public class DiverzaClientException : Exception
-    {
-		public DiverzaClientException ()
-        {
-        }
-
-		public DiverzaClientException (string message) : base (message)
-        {
-        }
-
-		public DiverzaClientException (string code, string message) : base (message)
-		{
-			Code = code;
-        }
-
-		public string Code { get; private set; }
-    }
+	[XmlType(Namespace="http://www.buzonfiscal.com/ns/xsd/bf/RequestTimbraCFDI")]
+	public enum DocumentoTipo
+	{
+		ZIP,
+		XML
+	}
 }
