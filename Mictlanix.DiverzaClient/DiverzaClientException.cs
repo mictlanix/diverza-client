@@ -24,11 +24,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
+using Mictlanix.CFDLib;
 
 namespace Mictlanix.Diverza.Client
 {
 	[Serializable]
-	public class DiverzaClientException : Exception
+	public class DiverzaClientException : CFDException
     {
 		public DiverzaClientException ()
         {
@@ -36,7 +37,11 @@ namespace Mictlanix.Diverza.Client
 
 		public DiverzaClientException (string message) : base (message)
         {
-        }
+		}
+
+		public DiverzaClientException (string message, Exception innerException) : base (message, innerException)
+		{
+		}
 
 		public DiverzaClientException (string code, string message) : base (message)
 		{
